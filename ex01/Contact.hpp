@@ -55,9 +55,14 @@ public:
         std::cout << "|" << printExact(nickname) << "|" << std::endl;
         std::cout << " -------------------------------------------" << std::endl;
     }
-    void    sepecificContact(std::string Searchindex)
+    void    displayIndexSearch()
     {
-        
+        std::cout << "index : " << printExact(index) << std::endl;
+        std::cout << "first name : " << printExact(firstName) << std::endl;
+        std::cout << "last name : " << printExact(lastName) << std::endl;
+        std::cout << "nick name : " << printExact(nickname) << std::endl;
+        std::cout << "secret : " << printExact(secret) << std::endl;
+        std::cout << "phone : " << printExact(phone) << std::endl;
     }
 };
 
