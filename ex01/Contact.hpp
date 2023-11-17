@@ -6,7 +6,7 @@
 
 class Contact {
 private:
-    int     index;
+    std::string index;
     std::string firstName;
     std::string lastName;
     std::string nickname;
@@ -18,7 +18,7 @@ public:
     {
 
     };
-    void setContact(int index, std::string firstName, std::string lastName, std::string nickname, std::string phone, std::string secret)
+    void setContact(std::string index, std::string firstName, std::string lastName, std::string nickname, std::string phone, std::string secret)
     {
         this->index = index;
         this->firstName = firstName;
@@ -34,24 +34,30 @@ public:
         else if(string.length() > 10)
         {
             string = string.substr(0, 10);
-            string.back() = '*';
+            string.back() = '.';
             return(string);
         }
         else if(string.length() < 10)
-        {
-            return(std::string(10 - string.length(), ' ').append(string));
-        }
+            return(string.append(10 - string.length(), ' '));
         return ("");
+    }
+    void    headTable()
+    {
+        std::cout << " -------------------------------------------" << std::endl;
+        std::cout << "|   Index  |first name| Last Name| Nick Name|" << std::endl;
+        std::cout << " -------------------------------------------" << std::endl;
     }
     void    display()
     {
-        std::cout << "-----------------------------------" << std::endl;
-        std::cout << "|first name| Last Name| Nick Name |" << std::endl;
-        std::cout << "-----------------------------------" << std::endl;
+        std::cout << "|" << printExact(index);
         std::cout << "|" << printExact(firstName);
         std::cout << "|" << printExact(lastName);
-        std::cout << "|" << printExact(nickname);
-        std::cout << "-----------------------------------" << std::endl;
+        std::cout << "|" << printExact(nickname) << "|" << std::endl;
+        std::cout << " -------------------------------------------" << std::endl;
+    }
+    void    sepecificContact(std::string Searchindex)
+    {
+        
     }
 };
 

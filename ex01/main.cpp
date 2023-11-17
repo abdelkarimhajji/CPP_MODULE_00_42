@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:56:28 by ahajji            #+#    #+#             */
-/*   Updated: 2023/11/17 11:27:48 by ahajji           ###   ########.fr       */
+/*   Updated: 2023/11/17 19:29:39 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     std::string secret;
     std::string choice;
     std::string number;
-    
+    std::string index;
     while(1)
     {
         std::cout << "choose ADD, SEARCH, EXIT : ";
@@ -44,7 +44,11 @@ int main()
             phone.addContact(firstName, lastName, nackName, number, secret);
         }
         else if(choice == "SEARCH")
+        {
             phone.displayAllPhoneBook();
+            std::cout << "enter index you want : ";
+            std::getline(std::cin, index);
+        }
         else if(choice == "EXIT")
             exit(0);
     }
