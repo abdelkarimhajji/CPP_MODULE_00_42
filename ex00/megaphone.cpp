@@ -1,21 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/18 12:15:21 by ahajji            #+#    #+#             */
+/*   Updated: 2023/11/18 12:35:29 by ahajji           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 
 int main(int ac, char **av) {
-    int i = 0;
+    int i = 1;
     int j = 0;
 
-    while (i < ac)
+    std::string str;
+    while (i < ac )
     {
         j = 0;
         while (av[i][j])
         {
             if(av[i][j] >='a' && av[i][j] <= 'z')
-                av[i][j] -= 32;
-            std::cout << av[i][j];
+                str += av[i][j] - 32;
+            else
+                str += av[i][j];
             j++;
         }
-         std::cout << std::endl;
         i++;
     }
+    std::cout << str <<std::endl;
     return 0;
 }

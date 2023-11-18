@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/18 12:15:13 by ahajji            #+#    #+#             */
+/*   Updated: 2023/11/18 12:17:39 by ahajji           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_H
 #define CONTACT_H
 
-// #include <iostream>
+#include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact {
 private:
@@ -14,56 +27,12 @@ private:
     std::string phone;
 
 public:
-    Contact()
-    {
-
-    };
-    void setContact(std::string index, std::string firstName, std::string lastName, std::string nickname, std::string phone, std::string secret)
-    {
-        this->index = index;
-        this->firstName = firstName;
-        this->lastName = lastName;
-        this->nickname = nickname;
-        this->phone = phone;
-        this->secret = secret;
-    }
-    std::string    printExact(std::string string)
-    {
-        if(string.length() == 10)
-            return(string);
-        else if(string.length() > 10)
-        {
-            string = string.substr(0, 10);
-            string.back() = '.';
-            return(string);
-        }
-        else if(string.length() < 10)
-            return(string.append(10 - string.length(), ' '));
-        return ("");
-    }
-    void    headTable()
-    {
-        std::cout << " -------------------------------------------" << std::endl;
-        std::cout << "|   Index  |first name| Last Name| Nick Name|" << std::endl;
-        std::cout << " -------------------------------------------" << std::endl;
-    }
-    void    display()
-    {
-        std::cout << "|" << printExact(index);
-        std::cout << "|" << printExact(firstName);
-        std::cout << "|" << printExact(lastName);
-        std::cout << "|" << printExact(nickname) << "|" << std::endl;
-        std::cout << " -------------------------------------------" << std::endl;
-    }
-    void    displayIndexSearch()
-    {
-        std::cout << "index : " << printExact(index) << std::endl;
-        std::cout << "first name : " << printExact(firstName) << std::endl;
-        std::cout << "last name : " << printExact(lastName) << std::endl;
-        std::cout << "nick name : " << printExact(nickname) << std::endl;
-        std::cout << "secret : " << printExact(secret) << std::endl;
-        std::cout << "phone : " << printExact(phone) << std::endl;
-    }
+    Contact();
+    void setContact(std::string index, std::string firstName, std::string lastName, std::string nickname, std::string phone, std::string secret);
+    std::string printExact(std::string string);
+    void headTable();
+    void display();
+    void    displayIndexSearch();
 };
 
 #endif

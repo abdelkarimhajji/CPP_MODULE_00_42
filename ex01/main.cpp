@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahajji <ahajji@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:56:28 by ahajji            #+#    #+#             */
-/*   Updated: 2023/11/17 22:59:10 by ahajji           ###   ########.fr       */
+/*   Updated: 2023/11/18 12:33:33 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include <iostream>
 #include "PhoneBook.hpp"
 
 int main()
@@ -25,54 +24,76 @@ int main()
     std::string choice;
     std::string number;
     std::string index;
+    int valid = 1;
     
-    std::cout << "<< Welcome to my aour PhoneBook >>\n>\n>\n>\n" ;
+    std::cout << "<< Welcome to my aour PhoneBook >>\n>\n>\n>" << std::endl;
     while(1)
     {
         std::cout << "choose ADD, SEARCH, EXIT : ";
-        std::getline(std::cin, choice); 
+        if (!std::getline(std::cin, choice))
+            break;
         if(choice == "ADD")
         {
-            while (1)
+            while (valid)
             {
                 std::cout << "enter firstName : ";
-                std::getline(std::cin, firstName);
+                if(!std::getline(std::cin, firstName))
+                {
+                    valid = 0;
+                    break;
+                }
                 if(!firstName.empty())
                     break;
                 else
                     std::cout << "input is empty, try again" << std::endl;
             }
-            while (1)
+            while (valid)
             {
                 std::cout << "enter lastName : ";
-                std::getline(std::cin, lastName);
+                if(!std::getline(std::cin, lastName))
+                {
+                    valid = 0;
+                    break;
+                }
                 if(!lastName.empty())
                     break;
                 else
                     std::cout << "input is empty, try again" << std::endl;
             }
-            while (1)
+            while (valid)
             {
                 std::cout << "enter nickname : ";
-                std::getline(std::cin, nackName);
+                if(!std::getline(std::cin, nackName))
+                {
+                    valid = 0;
+                    break;
+                }
                 if(!nackName.empty())
                     break;
                 else
                     std::cout << "input is empty, try again" << std::endl; 
             }
-            while (1)
+            while (valid)
             {
                 std::cout << "enter screte : ";
-                std::getline(std::cin, secret);
+                if(!std::getline(std::cin, secret))
+                {
+                    valid = 0;
+                    break;
+                }
                 if(!secret.empty())
                     break;
                 else
                     std::cout << "input is empty, try again" << std::endl; 
             }
-            while (1)
+            while (valid)
             {
                 std::cout << "enter phone number : ";
-                std::getline(std::cin, number);
+                if(!std::getline(std::cin, number))
+                {
+                    valid = 0;
+                    break;
+                }
                 if(!number.empty())
                     break;
                 else
@@ -82,8 +103,8 @@ int main()
         }
         else if(choice == "SEARCH")
         {
-            phone.displayAllPhoneBook();
-            
+            if(phone.displayAllPhoneBook())
+                break;
         }
         else if(choice == "EXIT")
             exit(0);
