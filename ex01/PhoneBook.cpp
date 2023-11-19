@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:12:15 by ahajji            #+#    #+#             */
-/*   Updated: 2023/11/18 12:18:26 by ahajji           ###   ########.fr       */
+/*   Updated: 2023/11/19 10:25:43 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,20 @@
                 arrContact[i].display();
                 i++;
             }
-            std::cout << "enter index you want : ";
-            if(std::getline(std::cin, index))
+            while (1)
             {
-                char ch = index.back();
-                if(index.length() == 1 && isdigit(ch) && std::stoi(index) < currentSize)
-                    sepecificContact(index);
+                std::cout << "enter index you want : ";
+                if(std::getline(std::cin, index) && !index.empty())
+                {
+                    char ch = index.back();
+                    if(index.length() == 1 && isdigit(ch) && std::stoi(index) < currentSize)
+                        sepecificContact(index);
+                    break;
+                }
+                else
+                    return 1;
             }
-            else
-                return 1;
+            
         }
         return 0;
     }
