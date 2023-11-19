@@ -6,11 +6,11 @@
 #    By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 12:47:02 by ahajji            #+#    #+#              #
-#    Updated: 2023/11/18 13:06:02 by ahajji           ###   ########.fr        #
+#    Updated: 2023/11/19 10:26:17 by ahajji           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
+NAME	= phonebook
 
 SRC		= main.cpp PhoneBook.cpp Contact.cpp
 OBJ		= $(SRC:.cpp=.o)

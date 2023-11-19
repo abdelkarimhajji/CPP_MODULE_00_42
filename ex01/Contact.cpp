@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:15:00 by ahajji            #+#    #+#             */
-/*   Updated: 2023/11/18 12:18:04 by ahajji           ###   ########.fr       */
+/*   Updated: 2023/11/19 10:10:55 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Contact::Contact()
 
     void Contact::headTable() {
         std::cout << " -------------------------------------------" << std::endl;
-        std::cout << "|   Index  |first name| Last Name| Nick Name|" << std::endl;
+        std::cout << "|     Index|first name| Last Name| Nick Name|" << std::endl;
         std::cout << " -------------------------------------------" << std::endl;
     }
 
